@@ -19,7 +19,6 @@ int main(int argc, char * argv[]){
 	LPCSTR dll_path = "## ENTER PATH TO DLL ##";  //path to dll 
 
 	//Open remote process
-	//target can also be found using SetWindowsHookExA
 	target_process = OpenProcess(PROCESS_ALL_ACCESS, FALSE, DWORD(atoi(argv[1])));
 	if(target_process == NULL){
 		cout<<"Error setting handle to process"<<endl;
