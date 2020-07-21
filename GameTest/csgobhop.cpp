@@ -1,5 +1,6 @@
 //CSGO bhop script (KEEP SPACE PRESSED) (Compile with -fpermissive to neglect typecasting precision loss)
 //Just for fun :P
+//All offsets taken from https://github.com/frk1/hazedumper
 
 #include <iostream>
 #include <Windows.h>
@@ -113,7 +114,7 @@ int main(void)
 	cout<< "PID: " <<CSGO.pid<<endl;
 	while (1)
 	{
-		CSGO.player = (DWORD)CSGO.Read<DWORD>(CSGO.ModuleBase + 0x00A77D2C);	//Player-Base offset in client.dll
+		CSGO.player = (DWORD)CSGO.Read<DWORD>(CSGO.ModuleBase + 0xD3DBEC);	//Player-Base offset in client.dll
 		
 		if (GetAsyncKeyState(VK_SPACE) && CSGO.OnGroundCheck())
 		{
